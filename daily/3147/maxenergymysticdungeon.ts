@@ -6,3 +6,12 @@ function maximumEnergy(energy: number[], k: number): number {
     }
     return Math.max(...dp);
 };
+
+
+function maximumEnergy2(energy: number[], k: number): number {
+  return Math.max(...energy.map((e, i) => e + (energy[i + k] || 0)));
+};
+
+let energy = [-2,-3,-1], k = 2;
+
+console.log(maximumEnergy2(energy, k));
